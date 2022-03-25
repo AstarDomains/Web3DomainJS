@@ -7,11 +7,11 @@ const web3 = new Web3(new Web3.providers.HttpProvider(rpcURL));
 
 const abi = contractJSON.abi;
 
-const currentAddress = "";
+const currentAddress = "0x3b946C2C84a316Fe8821D1662b83AF5521537943";
 
 const contractAddress = "0x73ABAA0036085caEb287C17EC427a27F93bb13B7";
 
-const domain = "astarnetwork.astr"
+const domain = "thuphuong.astr"
 
 reverseOf(currentAddress);
 
@@ -43,4 +43,20 @@ async function hashname(domain){
 	const contractFirst = new web3.eth.Contract(abi, contractAddress);
 	const tokenId = await contractFirst.methods.genTokenId(domain).call();
 	console.log(tokenId);
+}
+
+async function getAttribute(key, domain){
+
+	const contractFirst = new web3.eth.Contract(abi, contractAddress);
+	const tokenId = await contractFirst.methods.genTokenId(domain).call();
+	const value = contractFirst.methods.get(key, tokenId);
+	console.log(value);
+}
+
+async function getAttributes(keys, domain){
+
+	const contractFirst = new web3.eth.Contract(abi, contractAddress);
+	const tokenId = await contractFirst.methods.genTokenId(domain).call();
+	const value = contractFirst.methods.getMany(key, tokenId);
+	console.log(value);
 }
