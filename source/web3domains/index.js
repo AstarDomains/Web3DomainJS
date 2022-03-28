@@ -49,7 +49,7 @@ async function getAttribute(key, domain){
 
 	const contractFirst = new web3.eth.Contract(abi, contractAddress);
 	const tokenId = await contractFirst.methods.genTokenId(domain).call();
-	const value = contractFirst.methods.get(key, tokenId);
+	const value = await contractFirst.methods.get(key, tokenId);
 	console.log(value);
 }
 
@@ -57,6 +57,6 @@ async function getAttributes(keys, domain){
 
 	const contractFirst = new web3.eth.Contract(abi, contractAddress);
 	const tokenId = await contractFirst.methods.genTokenId(domain).call();
-	const value = contractFirst.methods.getMany(key, tokenId);
-	console.log(value);
+	const values = await contractFirst.methods.getMany(keys, tokenId);
+	console.log(values);
 }
