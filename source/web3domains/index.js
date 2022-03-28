@@ -11,7 +11,7 @@ const currentAddress = "0x3b946C2C84a316Fe8821D1662b83AF5521537943";
 
 const contractAddress = "0x73ABAA0036085caEb287C17EC427a27F93bb13B7";
 
-const domain = "thuphuong.astr"
+const domain = "astarnetwork.astr"
 
 reverseOf(currentAddress);
 
