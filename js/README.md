@@ -2,13 +2,13 @@
 
 **Step 1: insert web3js script to head tag**
 
-``
+```
 <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@3.0.0-rc.5/dist/web3.min.js"></script>
-``
+```
 
 **Step 2: Connect network**
 
-``
+```
 if (!window.ethereum) {
 			return;
 }
@@ -18,7 +18,7 @@ const rpcURL = 'https://rpc.shibuya.astar.network:8545';
 var web3Provider = new Web3.providers.HttpProvider(rpcURL);
 
 window.web3 = new Web3(web3Provider);
-``
+```
  
 ** Step 3: Load ABI Contract**
 
