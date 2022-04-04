@@ -3,22 +3,21 @@
 ### Get Resolve .astr domain
 Resolve .astr domain to get the address of the owner.
 
-Endpoint: https://app.astr.domains/api/domains/:domain?network=testnet&metadata=true
+Endpoint: https://app.astr.domains/api/domains/getOwner?domain=domain&network=testnet&metadata=true
 
-Method: GET
+**Method: GET**
 
-:domain: 'astarnetwork.astr'
+**Param: **
 
-Param: 
-
+domain: 'astarnetwork.astr', 
 network: 'testnet' // mainnet default
-metadata: true // false default return metadata along with name information
+metadata: true // false default return metadata along with domain information
 
-Return: 
+**Return:** 
 ``
 {
     :status": true,
-    "message": 'Success',
+    "message": "Success",
     "data": { 
         "owner": "0x37Jrh74Jdff...",
         "metadata": [
@@ -31,22 +30,110 @@ Return:
     }
 }
 ``
+### Get a domain default from address
+Get a domain default from a user's address, requiring the user to set the default domain name initially.
 
-### Get Domain owned by address
-Resolve .astr domain to get the address of the owner.
+Endpoint: https://app.astr.domains/api/domains/getDomain?address=0x3c16183c1c0e28f1a0cb9f8ee4b21d0db2
 
-https://app.astr.domains/api/domains/:address
+**Method: GET**
 
-Param
+**Param**
 
-domain: true (return socials along with name information)
+address: 0x3c16183c1c0e28f1a0cb9f8ee4b21d0db2 ... // wallet address
 
-Return: 
+**Return:** 
 ``
 {
     status: true,
-    message: 'Success',
-    data: { address: "0x37Jrh74Jdff..."}
+    message: "Success",
+    data:
+        { 
+            "domain": "astarnetwork.astr",
+            "default":true
+        }
+    ]
+}
+``
+
+### Get all domains owned by address
+This GET method gets all the domains owned by an wallet address.
+
+Endpoint: https://app.astr.domains/api/domains/getDomains?address=0x3c16183c1c0e28f1a0cb9f8ee4b21d0db2
+
+**Method: GET**
+
+**Param**
+
+address: 0x3c16183c1c0e28f1a0cb9f8ee4b21d0db2 ...
+
+**Return:** 
+``
+{
+    status: true,
+    message: "Success",
+    data: [
+        { 
+            "domain": "astarnetwork.astr",
+            "createtime": "",
+            "default":true
+        },
+        { 
+            "domain": "astar.astr",
+            "createtime": "",
+            "default":false
+        },
+    ]
+}
+``
+
+
+### Get Metatada
+Get a value of metadata from the domain name
+
+https://app.astr.domains/api/domains/getMetadata?key=website,twitter&domain=astarnetwork.astr
+
+**Method: GET**
+
+**Param**
+
+keys: 'website,twitter'
+domain: 'astarnetwork.astr'
+
+**Return:** 
+``
+{
+    status: true,
+    message: "Success",
+    data:
+        { 
+            "metadata": [
+                {"key": "twitter","value":"https://twitter.com/astar_domains"},
+                {"key": "website","value":"https://astr.domains"}
+            ]
+        }
+}
+``
+
+### Gen hashname
+Namehash is a recursive process that can generate a unique hash for any valid domain name.
+
+https://app.astr.domains/api/domains/hashname?domain=hello.astr
+
+**Method: GET**
+
+**Param**
+
+domain: 'hello.astr'
+
+**Return:** 
+``
+{
+    status: true,
+    message: "Success",
+    data:
+        { 
+            "hashname": "95056584996377272172318102362430335359056670016098380788598434836875371874275"
+        }
 }
 ``
 
