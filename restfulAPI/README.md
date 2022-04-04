@@ -7,7 +7,7 @@ Endpoint: https://app.astr.domains/api/domains/getOwner?domain=domain&network=te
 
 **Method: GET**
 
-**Param: **
+**Param:**
 
 domain: 'astarnetwork.astr', 
 network: 'testnet' // mainnet default
