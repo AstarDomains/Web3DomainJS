@@ -14,7 +14,7 @@ network: 'testnet' // mainnet default
 metadata: true // false default return metadata along with domain information
 
 **Return:** 
-``
+```
 {
     :status": true,
     "message": "Success",
@@ -29,7 +29,7 @@ metadata: true // false default return metadata along with domain information
         ]
     }
 }
-``
+```
 ### Get a domain default from address
 Get a domain default from a user's address, requiring the user to set the default domain name initially.
 
@@ -42,7 +42,7 @@ Endpoint: https://app.astr.domains/api/domains/getDomain?address=0x3c16183c1c0e2
 address: 0x3c16183c1c0e28f1a0cb9f8ee4b21d0db2 ... // wallet address
 
 **Return:** 
-``
+```
 {
     status: true,
     message: "Success",
@@ -53,7 +53,7 @@ address: 0x3c16183c1c0e28f1a0cb9f8ee4b21d0db2 ... // wallet address
         }
     ]
 }
-``
+```
 
 ### Get all domains owned by address
 This GET method gets all the domains owned by an wallet address.
@@ -67,7 +67,7 @@ Endpoint: https://app.astr.domains/api/domains/getDomains?address=0x3c16183c1c0e
 address: 0x3c16183c1c0e28f1a0cb9f8ee4b21d0db2 ...
 
 **Return:** 
-``
+```
 {
     status: true,
     message: "Success",
@@ -84,7 +84,7 @@ address: 0x3c16183c1c0e28f1a0cb9f8ee4b21d0db2 ...
         },
     ]
 }
-``
+```
 
 
 ### Get Metatada
@@ -100,7 +100,7 @@ keys: 'website,twitter'
 domain: 'astarnetwork.astr'
 
 **Return:** 
-``
+```
 {
     status: true,
     message: "Success",
@@ -112,7 +112,7 @@ domain: 'astarnetwork.astr'
             ]
         }
 }
-``
+```
 
 ### Gen hashname
 Namehash is a recursive process that can generate a unique hash for any valid domain name.
@@ -126,7 +126,7 @@ https://app.astr.domains/api/domains/hashname?domain=hello.astr
 domain: 'hello.astr'
 
 **Return:** 
-``
+```
 {
     status: true,
     message: "Success",
@@ -135,6 +135,6 @@ domain: 'hello.astr'
             "hashname": "95056584996377272172318102362430335359056670016098380788598434836875371874275"
         }
 }
-``
+```
 
 
