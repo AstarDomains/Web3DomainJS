@@ -1,4 +1,5 @@
 const Web3 = require('web3');
+
 const contractJSON = require('web3domainjs/contract/Web3Domain.json');
 
 const rpcURL = 'https://rpc.shibuya.astar.network:8545';
@@ -13,22 +14,30 @@ const contractAddress = "0x73ABAA0036085caEb287C17EC427a27F93bb13B7";
 
 const domain = "astarnetwork.astr"
 
-reverseOf(currentAddress);
+getDomain(currentAddress);
+
+getDomains(currentAddress);
 
 getOwner(domain);
 
+getMetadata('avatar', domain);
+
+getMetadatas(['website','twitter'], domain);
+
 hashname(domain);
 
-async function Web3Domain(){
-	const balance = await web3.eth.getBalance(currentAddress);
-	console.log(balance);
-}
-
-async function reverseOf(currentAddress){
+async function getDomain(currentAddress){
 	const abi = contractJSON.abi;
 	const contractFirst = new web3.eth.Contract(abi, contractAddress);
 	const domainReverse = await contractFirst.methods.reverseOf(currentAddress).call();
 	console.log(domainReverse);
+}
+
+async function getDomains(currentAddress){
+	const abi = contractJSON.abi;
+	const contractFirst = new web3.eth.Contract(abi, contractAddress);
+	const arg = await contractFirst.methods.getDomainbyAddress(currentAddress).call();
+	console.log(arg);
 }
 
 async function getOwner(domain){
@@ -38,14 +47,7 @@ async function getOwner(domain){
 	console.log(ownerAddress);
 }
 
-async function hashname(domain){
-	
-	const contractFirst = new web3.eth.Contract(abi, contractAddress);
-	const tokenId = await contractFirst.methods.genTokenId(domain).call();
-	console.log(tokenId);
-}
-
-async function getAttribute(key, domain){
+async function getMetadata(key, domain){
 
 	const contractFirst = new web3.eth.Contract(abi, contractAddress);
 	const tokenId = await contractFirst.methods.genTokenId(domain).call();
@@ -53,10 +55,17 @@ async function getAttribute(key, domain){
 	console.log(value);
 }
 
-async function getAttributes(keys, domain){
+async function getMetadatas(keys, domain){
 
 	const contractFirst = new web3.eth.Contract(abi, contractAddress);
 	const tokenId = await contractFirst.methods.genTokenId(domain).call();
 	const values = await contractFirst.methods.getMany(keys, tokenId);
 	console.log(values);
+}
+
+async function hashname(domain){
+	
+	const contractFirst = new web3.eth.Contract(abi, contractAddress);
+	const tokenId = await contractFirst.methods.genTokenId(domain).call();
+	console.log(tokenId);
 }
