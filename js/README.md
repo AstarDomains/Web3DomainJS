@@ -20,7 +20,7 @@ var web3Provider = new Web3.providers.HttpProvider(rpcURL);
 window.web3 = new Web3(web3Provider);
 ```
  
-** Step 3: Load ABI Contract**
+**Step 3: Load ABI Contract**
 
 ```
 const fetchABI = async () =>
