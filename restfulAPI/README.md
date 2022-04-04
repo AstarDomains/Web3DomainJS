@@ -9,7 +9,7 @@ Endpoint: https://app.astr.domains/api/domains/getOwner?domain=domain&network=te
 
 **Param:**
 
-domain: 'astarnetwork.astr', 
+domain: 'astarnetwork.astr'
 network: 'testnet' // mainnet default
 metadata: true // false default return metadata along with domain information
 
