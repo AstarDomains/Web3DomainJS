@@ -18,10 +18,10 @@ const rpcURL = 'https://rpc.shibuya.astar.network:8545';
 var web3Provider = new Web3.providers.HttpProvider(rpcURL);
 
 window.web3 = new Web3(web3Provider);
-
- ``
+``
  
 ** Step 3: Load ABI Contract**
+
 ``
 const fetchABI = async () =>
 {
@@ -31,11 +31,11 @@ const fetchABI = async () =>
 		const abi = result.abi;
 		return abi;
 };
-	
 ``
 
 **Step 4: Connect Contract**
 
+``
 var contactAddress = '';
 
 var abi = await fetchABI();
@@ -44,6 +44,7 @@ var contractFirst = new web3.eth.Contract(
 						abi,
 						contactAddress
 );
+``
 
 **Get Owner Address by domain name**
 
