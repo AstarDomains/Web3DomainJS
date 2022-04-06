@@ -49,7 +49,7 @@ address: 0x3c16183c1c0e28f1a0cb9f8ee4b21d0db2 ... // wallet address
     data:
         { 
             "domain": "astarnetwork.astr",
-            "default":true
+            "setDefault":true
         }
     ]
 }
@@ -75,12 +75,12 @@ address: 0x3c16183c1c0e28f1a0cb9f8ee4b21d0db2 ...
         { 
             "domain": "astarnetwork.astr",
             "createtime": "",
-            "default":true
+            "setDefault":true
         },
         { 
             "domain": "astar.astr",
             "createtime": "",
-            "default":false
+            "setDefault":false
         },
     ]
 }
