@@ -16,7 +16,7 @@ metadata: true // false default return metadata along with domain information
 **Return:** 
 ```
 {
-    :status": true,
+    "status": true,
     "message": "Success",
     "data": { 
         "owner": "0x37Jrh74Jdff...",
