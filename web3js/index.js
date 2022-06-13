@@ -2,7 +2,7 @@ const Web3 = require('web3');
 
 const contractJSON = require('contract/Web3Domain.json');
 
-const rpcURL = 'https://rpc.shibuya.astar.network:8545';
+const rpcURL = 'https://http-testnet.hoosmartchain.com';
 
 const web3 = new Web3(new Web3.providers.HttpProvider(rpcURL));
 
@@ -10,9 +10,9 @@ const abi = contractJSON.abi;
 
 const currentAddress = "";
 
-const contractAddress = "0x73ABAA0036085caEb287C17EC427a27F93bb13B7";
+const contractAddress = "0xA1019535E6b364523949EaF45F4B17521c1cb074";
 
-const domain = "astarnetwork.astr"
+const domain = "helloworld.hoo"
 
 getDomain(currentAddress);
 
